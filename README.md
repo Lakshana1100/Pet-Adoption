@@ -1,4 +1,9 @@
 # Pet-Adoption
-Start by running server using the command 'python manage.py runserver'.
-Enter the displayed local host on your address bar.
-Access the webpage.
+After installation of python on your computer, set up your virtual environment.
+Use 'pip install vitualenv' to install it.
+Name it by using 'virtualenv your_envname'.
+Activate your environment by using the command 'workon your_envname'.
+Now use the command 'pip install django' to install django into your created environment.
+The manage.py file will now help you execute the project by using the command 'manage.py runserver'.
+
+
