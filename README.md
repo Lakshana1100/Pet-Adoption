@@ -3,7 +3,7 @@ After installation of python on your computer, set up your virtual environment.
 
 Use 'pip install vitualenv' to install it.
 
-Name it by using 'virtualenv your_envname'.
+Name your environment by using 'virtualenv your_envname'.
 
 Activate your environment by using the command 'workon your_envname'.
 
