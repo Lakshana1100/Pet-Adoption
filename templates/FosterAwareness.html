@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} FosterAwareness {% endblock %}
+
+{% block content %}
+
+<body bgcolor="white">
+<center>
+<br><br>
+<font face="tahoma" size="5"><h1 style="color:gray"><b> Thank You for your Interest ! </b></h1></font></center><br>
+<font size="3"><center><h2> What does fostering mean? </h2></center></font><br><br>
+
+<p><font style="font-size:150%"> Our dog foster program is designed to help adult dogs from local shelters to get a second chance at finding 
+a home — a chance they may not have received at a shelter. <br>
+Many of the dogs who need foster homes require extra care and attention, which shelters often don’t have the staff or resources to provide. But in a loving foster home, 
+every dog can get the individual attention he or she needs to find a forever family.<br><br>
+
+<center><img src="{% static '/images/Foster1.jpg' %}" alt="" style="width:800px;height:400px;"></center>
+
+<br><br>Thank you so much for your interest in fostering dogs for Dogs&Life. 
+By opening up your home to foster pets, you’re not only helping to save lives, you’re providing the individual attention and love these dogs desperately need.<br><br>
+
+Once you have completed your foster application online  ( <a href="{% url 'formF' %}" title="Go to the foster form"> click here </a> to access the form ), 
+our foster coordinator will get in touch with you to sign you up for one of our 
+scheduled orientation and training sessions. <br><br>
+In the session, we’ll go over this manual and answer any questions you have about the program.<br><br>
+
+Our dog foster program is designed to help adult dogs from local shelters to get a second chance at finding a home — a chance they may not have received at a shelter. 
+Many of the dogs who need foster homes require extra care and attention, which shelters often don’t have the staff or resources to provide.<br><br>
+
+<img src="{% static '/images/image-grid-house.jpg' %}" alt="" align="right" style="width:350px;height:300px;">
+
+<br>But in a loving foster home, 
+every dog can get the individual attention he or she needs to find a forever family.Foster homes are asked to provide care for the dogs, as well as transportation to and from veterinary appointments as needed, 
+<br><br>Foster homes are asked to provide care for the dogs, as well as transportation to and from veterinary appointments as needed, 
+and transportation to the near by dog centers  at least twice a week so foster pets can get an opportunity to meet prospective adopters. 
+<br><br>Care for foster dogs includes feeding according to size and needs, exercise according to energy levels, and lots of play time and positive socialization.<br><br>
+
+Although fostering is a lot of work, it is a very rewarding experience. By participating in this program, you are saving lives and helping many different 
+types of dogs find the families they’ve been longing for.<br><br> Through fostering, we can work together to Save Them All..<br>
+
+
+
+
+</body>
+{% endblock %}

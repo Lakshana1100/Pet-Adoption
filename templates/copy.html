@@ -1,0 +1,133 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+from pet.models import daycareInsert
+from pet.models import adoptInsert
+from django.contrib import messages
+
+from pet.models import daycareDisplay
+import pyodbc as db
+
+# Create your views here.
+
+def one(request):
+    return render(request,"onefile.html")
+
+def two(request):
+    return render(request,"twofile.html")
+
+def mainp(request):
+    return render(request,"home.html")
+
+def steps(request):
+    return render(request,"stepsToAdopt.html")
+
+def lucy(request):
+    return render(request,"Lucy.html")
+
+def mia(request):
+    return render(request,"Mia.html")
+
+def lola(request):
+    return render(request,"Lola.html")
+
+def harley(request):
+    return render(request,"Harley.html")
+
+def snow(request):
+    return render(request,"Snow.html")
+
+def newlitter(request):
+    return render(request,"NewLitter.html")
+
+def buddy(request):
+    return render(request,"Buddy.html")
+
+def sunny(request):
+    return render(request,"Sunny.html")
+
+def bear(request):
+    return render(request,"Bear.html")
+
+def PYH(request):
+    return render(request,"PrepareYourHome.html")
+
+def donate(request):
+    return render(request,"Donate.html")
+
+def newvolunteer(request):
+    return render(request,"NewVolunteer.html")
+
+def fosterawareness(request):
+    return render(request,"FosterAwareness.html")
+
+def daycare(request):
+    return render(request,"DayCare.html")
+
+def release(request):
+    return render(request,"ReleaseOfOwn.html")
+
+def why(request):
+    return render(request,"WhyDogs&Life.html")
+
+def contactus(request):
+    return render(request,"ContactUs.html")
+
+def formadopt(request):
+    return render(request,"AppFormAdopt.html")
+
+def formfoster(request):
+    return render(request,"AppFormFoster.html")
+
+def daycareslot(request):
+    return render(request,"DaycareSlots.html")
+
+#def formdaycare(request):
+    #return render(request,"AppFormDaycare.html")
+
+def insertDaycare(request):
+    if request.method=='POST':
+        if request.POST.get('name') and request.POST.get('age') and request.POST.get('address') and request.POST.get('phone') and request.POST.get('email') and request.POST.get('datedd'):
+            saverecord=daycareInsert()
+            saverecord.name=request.POST.get('name')
+            saverecord.age=request.POST.get('age')
+            saverecord.address=request.POST.get('address')
+            saverecord.phone=request.POST.get('phone')
+            saverecord.email=request.POST.get('email')
+            saverecord.datedd=request.POST.get('datedd')
+            saverecord.save()
+            messages.success(request,'Record saved successfully.')
+            return render(request,'AppFormDaycare.html')
+    else:
+        return render(request,'AppFormDaycare.html')
+
+def displayDaycare(request):
+    conn_str = (
+        r'DRIVER={MySQL ODBC 8.0 ANSI Driver};'
+        r'SERVER=localhost;'
+        r'DATABASE=pet;'
+        r'User =root;'
+        r'Password=admin;'
+        r'Trusted_Connection=yes;'
+        )
+    conn=db.connect(conn_str)
+    cursor=conn.cursor()
+    cursor.execute("select name,address,phone,email,datedd from daycare")
+    result=cursor.fetchall()
+    return render(request,'DaycareSlots.html',{'daycareDisplay':result})
+
+def insertAdopt(request):
+    if request.method=='POST':
+        if request.POST.get('name') and request.POST.get('age') and request.POST.get('address') and request.POST.get('phone') and request.POST.get('email') and request.POST.get('selectdog'):
+            saverecord=adoptInsert()
+            saverecord.name=request.POST.get('name')
+            saverecord.age=request.POST.get('age')
+            saverecord.address=request.POST.get('address')
+            saverecord.phone=request.POST.get('phone')
+            saverecord.email=request.POST.get('email')
+            saverecord.selectdog=request.POST.get('selectdog')
+            saverecord.save()
+            messages.success(request,'Record saved successfully.')
+            return render(request,'AppFormAdopt.html')
+    else:
+        return render(request,'AppFormAdopt.html')

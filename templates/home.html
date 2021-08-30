@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+<title>DOGS&LIFE</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body{
+            font-family: Montserrat;
+    }
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+.photo_gallery {
+    display: flex;
+}
+
+.photo_gallery a {
+        display: inline-block;
+        height: 300px;
+    }
+
+.photo_gallery img {
+        object-position: center;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+  }
+</style>
+</head>
+<body bgcolor="white">
+<center>
+<br><br>
+<font face="tahoma" size="5"><h1 style="color:gray"><b> Welcome To Dogs&Life.</b></h1></font></center><br><br>
+
+<ul>
+  <li><a href="{% url 'mainp' %}">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Adopt  +  </a>
+    <div class="dropdown-content">
+      <a href="{% url 'steps' %}">Steps to adopt</a>
+      <a href="{% url 'PYH' %}">Prepare Your Home </a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Forms +  </a>
+    <div class="dropdown-content">
+      <a href="{% url 'formA' %}" target="adopt_page">Adoption Form</a>
+      <a href="{% url 'formF' %}" target="vol_page">Foster Form</a>
+	  <a href="{% url 'formD' %}" target="dd_page">Daycare Form</a>
+    </div>
+  </li>
+  <li><a href="{% url 'daycareslot' %}">Daycare Slots </a></li>
+  <li><a href="{% url 'donate' %}">Donate </a></li>
+   <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Volunteer  +  </a>
+    <div class="dropdown-content">
+      <a href="{% url 'newvolunteer' %}">New Volunteer</a>
+      <a href="{% url 'fosterawareness' %}">Foster Awareness</a>
+	  <a href="{% url 'daycare' %}">Day Care</a>
+    </div>
+  </li>
+  <li><a href="{% url 'release' %}">Release Of Ownership</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">About  +  </a>
+    <div class="dropdown-content">
+      <a href="{% url 'why' %}">Why Dogs&Life</a>
+	    <a href="{% url 'contactus' %}">Contact Us</a>
+    </div>
+  </li>
+  
+  
+</ul><br><br>
+
+<p style="font-size:140%">  Most shelter pets that are abandoned have been dumped there for no fault of theirs.<br><br>
+They are eager to shower love on whoever accepts them.<br> 
+<b>Click on the below profiles</b> to know more details about these dogs.</p>
+
+<p style="font-size:140%"><marquee>Here's a few cute fellas waiting to come home with you!!</marquee></p>
+<br><br>
+<!--<table>
+  <tr>-->
+    <section class="photo_gallery">
+    {% for results in dogs %}
+    <a href="{{results.link}}" title="Go to {{results.name}} details"> 
+      <img src="{{results.image.url}}" style="width:350px;height:300px;">
+      </a>
+      {% endfor %}
+    </section>
+</center>
+</body>
+</html>

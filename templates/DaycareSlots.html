@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Daycare Slots</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+crossorigin="anonymous">
+
+<style>
+          
+	.box{
+          box-shadow: 0px 0px 80px 0px rgba(135,100,184,0.2);
+          padding: 40px;
+          max-width: 700px;
+          margin-top: 50px;
+          border-radius: 10px;
+          background-size: cover;
+      }
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+</style>
+
+</head>
+<body bgcolor="white">
+    <center>
+    <br><br>
+    <center><font face="tahoma" size="15" color="grey"><b> Daycare Slots </b></font></center><br><br>
+    <center><font size="1"><h2>Here's a few volunteers for daycare.</h2></font></center>
+    <center>
+    <div class="box">
+
+    <table cellspacing="15" cellpadding="15">
+        <tr><th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Start Date</th>
+            <th>End Date</th>          
+        </tr>
+        {% for datadisplay in daycareDisplay %}
+        <tr>
+            <td>{{datadisplay.name}}</td>
+            <td>{{datadisplay.address}}</td>
+            <td>{{datadisplay.phone}}</td>
+            <td>{{datadisplay.email}}</td>
+            <td>{{datadisplay.datedd}}</td>
+            <td>{{datadisplay.datedd2}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+</center>
+
+<br><br><br>
+<a href="{% url 'mainp' %}" title="Go to Home Page">
+    <img src="{% static '/images/Home.jpg' %}" align="right" style="width:50px;height:50px;"></a> 
+
+</body>
+</html>

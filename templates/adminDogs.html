@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+<title>DOGS&LIFE </title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body{
+            font-family: Montserrat;
+    }
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+</style>
+</head>
+<body bgcolor="white">
+<center>
+<br><br>
+<font face="tahoma" size="5"><h1 style="color:gray"><b> Welcome To Dogs&Life.</b></h1></font></center><br><br>
+
+{% for results in dogs %}
+
+<br><br>
+<div class="row">
+  <div class="column">
+    <a href="{{results.link}}" title="Go to {{results.name}} details"> 
+<img src="{{results.image.url}}" style="width:350px;height:300px;">
+</a>
+  </div>
+  </div>
+
+  {% endfor %}
+
+<!--
+<div class="column">
+  <a href="{% url 'mia' %}" title="Go to Mia's details"> 
+<img src="{% static '/images/Mia.jpg' %}" style="width:350px;height:300px;">
+</a>
+</div>
+<div class="column">
+  <a href="{% url 'lola' %}" title="Go to Lola's details"> 
+<img src="{% static '/images/Lola.jpg' %}" style="width:350px;height:300px;">
+</a>
+</div>
+<div class="column">
+<a href="{% url 'harley' %}" title="Go to Harley's details"> 
+<img src="{% static '/images/Harley.jpg' %}" style="width:350px;height:300px;">
+</a>
+</div>
+<div class="column">
+<a href="{% url 'snow' %}" title="Go to Snow's details"> 
+<img src="{% static '/images/Snow.jpg' %}" style="width:350px;height:300px;">
+</a>
+</div>
+<div class="column">
+<a href="{% url 'newlitter' %}" title="Go to the New Litter's details"> 
+<img src="{% static '/images/NewLitter.jpg' %}" style="width:350px;height:300px;">
+</a>
+</div>
+<div class="column">
+<a href="{% url 'buddy' %}" title="Go to Buddy's details"> 
+<img src="{% static '/images/Buddy.jpg' %}" style="width:350px;height:300px;">
+</a>
+</div>
+<div class="column">
+<a href="{% url 'sunny' %}" title="Go to Sunny's details"> 
+<img src="{% static '/images/Sunny.jpg' %}" style="width:350px;height:300px;">
+</a>
+</div>
+<div class="column">
+<a href="{% url 'bear' %}" title="Go to Bear's details"> 
+<img src="{% static '/images/Bear.jpg' %}" style="width:350px;height:300px;">
+</a>
+
+-->
+
+
+
+</body>
+</html>

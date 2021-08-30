@@ -1,0 +1,57 @@
+{% extends 'baseDogs.html' %}
+{% load static %}
+
+{% block title %} Harley {% endblock %}
+
+{% block content %}
+
+
+<body bgcolor="white">
+<br>
+
+{% for results in dogs %}
+
+<center><font size="5"><h1 style="color:gray"><b> {{results.name}} </b></h1></font></center>
+<br>
+<img src="{{results.image.url}}" alt="{{results.name}} Picture" align="right" style="width:450px;height:400px;">
+
+<center><font size="6">Details</font></center><br>
+
+<table align="center">
+  <tr>
+    <td>Breed</td>
+    <td>{{results.breed}}</td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td>{{results.gender}}</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{results.age}}</td>
+  </tr>
+  <tr>
+    <td>Color</td>
+    <td>{{results.color}}</td>
+  </tr>
+  <tr>
+    <td>Size</td>
+    <td>{{results.size}}</td>
+  </tr>
+  <tr>
+    <td>ID number</td>
+    <td>{{results.id}}</td>
+  </tr>
+</table>
+
+{% endfor %}
+
+<br><br><br><br>
+<p><font size="5"> Harley is a sweet terrier.He is a senior dog that loves chilling with poeple.He does not
+prefer other dog's company as much as a human's due to his age.He is an amazing watch dog.
+He is potty trained and loves evening strolls. Harley would be well suited for a stable lovinng home for the rest of his days.</font></p><br>
+
+
+
+</body>
+{% endblock %}

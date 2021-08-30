@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body bgcolor="white">
+<center>
+<br><br>
+<font face="tahoma" size="5"><h1 style="color:gray"><b> Are you ready to handle these furry friends for a while? </b></h1></font></center><br>
+<font size="3"><h2> You can participate in doggy day care !  </h2></font>
+
+<p><font style="font-size:150%"> Are you too busy to own a dog? No problem ! You can take care of them part-time.
+Doggy day care is very popular as sometimes people have long hours straight at work. At such situations, people don't prefer leaving
+their dog kids home alone for a stretch.<br><br>
+
+The directions,timings, and neccessities to take care of the dog/puppy will be given by the owners. By filling <a href="{% url 'formD' %}" title="Go to the daycare form">this form </a> 
+you can easily volunteer to day care! If the owners have an extra requirement for their pet, you can even get a small payment to get the essentials for their 
+loved one. This will be by direct communication between you and the pet's owner ! </font></p>
+<br><br>
+
+<center><img src="{% static '/images/DogDayCare.jpg' %}" alt="" style="width:900px;height:350px;"></center><br>
+
+<br><font style="font-size:150%"><b>How will I know the nearest temporary home stay for my fur baby?</b></font><br><br>
+
+ <p><font style="font-size:150%"> Through us ofcourse ! You can access the details by <a href="{% url 'daycareslot' %}" title="Go to the daycare form"> clicking here </a>. 
+ After viewing the details, you can select your required volunteer according to their location and information.
+You will also get the information to communicate with the care taker about the essentials of and about your pet.<br>
+<br> These basic details will help us find home stays near you, and we will notify you the options/option. 
+Feel free to contact us in the <a href="{% url 'contactus' %}" title="contact us"> contact us </a> section for any further queries.<br><br>
+
+ </font></p>
+
+
+
+
+
+
+</body>
+{% endblock %}

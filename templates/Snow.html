@@ -1,0 +1,57 @@
+{% extends 'baseDogs.html' %}
+{% load static %}
+
+{% block title %} Snow {% endblock %}
+
+{% block content %}
+
+<body bgcolor="white">
+<br>
+
+{% for results in dogs %}
+
+<center><font size="5"><h1 style="color:gray"><b> {{results.name}} </b></h1></font></center>
+<br>
+<img src="{{results.image.url}}" alt="{{results.name}} Picture" align="right" style="width:450px;height:400px;">
+
+<center><font size="6">Details</font></center><br>
+
+<table align="center">
+  <tr>
+    <td>Breed</td>
+    <td>{{results.breed}}</td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td>{{results.gender}}</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{results.age}}</td>
+  </tr>
+  <tr>
+    <td>Color</td>
+    <td>{{results.color}}</td>
+  </tr>
+  <tr>
+    <td>Size</td>
+    <td>{{results.size}}</td>
+  </tr>
+  <tr>
+    <td>ID number</td>
+    <td>{{results.id}}</td>
+  </tr>
+</table>
+
+{% endfor %}
+
+<br><br><br><br><br>
+<p><font size="5"> Snow is a mischeivious 5 month puppy.He loves humans and other dogs and he gets along with kids extremely well!
+He is charming and tries hard to please those he loves.He is familiar with a leash and content with a few short jogs each day. 
+Snow is housetrained and will wait at an open door until he has permission to go outside.
+</font></p><br>
+
+
+
+</body>
+{% endblock %}

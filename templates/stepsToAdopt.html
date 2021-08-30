@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} StepToAdopt {% endblock %}
+
+{% block content %}
+
+<body bgcolor="white">
+<center>
+<br><br>
+<font face="tahoma" size="5"><h1 style="color:gray"><b> Congrats!! </b></h1></font></center><br>
+<font size="3"><center><h2> Finally, adoption time!! </h2></center></font><br><br>
+
+<center><img src="{% static '/images/before&after.jpg' %}" alt="" style="width:800px;height:450px;"></center>
+
+<br><p style="font-size:150%"> <b> Way to go !! </b><br><br>
+
+<b>STEP 1: Decide what kind of dog you want.</b> <br>
+
+<br>Yes! There are many kinds of dogs you may come across,
+each varying in their behaviour,character,size,etc.<br><br>
+Keep in mind your lifestyle, budget, home space and your family before you decide which kind of dog you want to bring home. 
+While families with kids or young couples might opt for a lively dog, seniors can go for aged canines who require 
+less training and can be ideal retirement companions.<br></p>
+
+
+<center><img src="{% static '/images/DiffBreeds.jpg' %}" alt="" style="width:700px;height:300px;"></center>
+
+<br><br>
+
+
+<p style="font-size:150%">
+<b>STEP 2: Find out your near by shelters.</b> <br><br> Locate the nearby dog shelter and visit the place several times keeping 
+in mind who you want in your home. Dogs&Life is a center situated in bangalore. 
+<br><br><br>
+
+<b>STEP 3: Bond with the dogs at the center.</b><br>
+
+<img src="{% static '/images/Bonding.jpg' %}" alt="" align="right" style="width:450px;height:250px;">
+
+<br>Interact with the dogs at the shelter. <br><br>
+Ask the shelter keepers about their individual temperament and history.<br>
+Enquire about their behaviour with humans and other animals.<br><br>
+Ideally, visit the shelter a couple of times and bond with your ‘chosen one’ before<br>adopting her/him. Make an informed decision in the end.<br><br><br>
+
+<b>STEP 4: Secure the medical records.</b><br><br>Ensure that your dog is properly vaccinated. Ask the shelter to provide the medical records of the dog, 
+detailing past illnesses or injuries/traumas, if any.<br><br><br>
+
+<b>STEP 5: Follow the official adoption procedure.</b><br>Most shelters follow a specific adoption procedure involving an adoption form 
+and submission of other certificates.<br><br>So do we! The adoption form asks questions about your original identity documents and address proof as 
+you will be obliged to provide a copy to the center for saftey reasons.<br><br><br>
+
+<b>STEP 6: Take your fur baby home.</b><br><br> Finally the moment you've been waiting for is here.<br><br>
+After requisite background checks and counselling, the shelter will finally hand over the dog to you.<br><br>However, it might take the dog some time to 
+acclimatise to the home environment. For some, it might be just a few days, while other dogs can take up to a few months.<br><br>
+
+To access our adoption form <a href="{% url 'formA' %}" title="Go to the adoption form"> click here </a>.
+
+<center><img src="{% static '/images/HomeWithDog.jpg' %}" alt="" style="width:650px;height:300px;"></center>
+
+<br>
+<center><marquee><b><font face="tahoma" size="4">Have patience and continue showering your baby with all the love you can.</font><b></marquee></center>
+<br></p>
+
+
+
+</body>
+{% endblock %}

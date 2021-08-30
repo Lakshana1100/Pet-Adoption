@@ -1,0 +1,93 @@
+{% extends 'baseForms.html' %}
+{% load static %}
+
+{% block title %} DayCareForm {% endblock %}
+
+
+{% block content %}
+
+  <script type = "text/javascript" >
+function OnDropDownChange(dropDown)
+{
+// dropDown.options to select the drop down list value based on index and store it in some variable for displaying in the browser
+var selectedValue=dropDown.options[dropDown.selectedIndex].value;
+
+//method to find html element with id "txtSelectedCapital" and change the element content (innerHTML) to selectedValue
+document.getElementById("txtSelectDog").innerHTML = selectedValue;
+}
+</script>
+
+<body>
+<style>
+input, select, textarea {
+font-size: 80%;
+}
+</style> 
+ <Body> 
+<br><br>
+
+<center><font face="tahoma" size="15" color="grey"><b> Foster Form </b></font></center>
+<br><br>
+	
+	<center>
+	<font size="5"> Enter the following contact details : </font><br>
+	<font size="5"> (First step to foster)</font>
+	
+	<div class="box">
+	
+	
+	<form name="myForm" method="POST">  
+		{% csrf_token %}
+	<table cellspacing="15" cellpadding="10">
+	
+  
+		
+        <tr><td>Enter your full name:</td><td><input class="form-control" type="text" name="name" placeholder="Full name" required autocomplete="off"></td></tr>
+  
+        <tr><td>Enter your age:</td><td><input class="form-control" type="number" name="age" min="18" max="100" placeholder="Age" required autocomplete="off"></td></tr>
+ 
+        <tr><td>Enter your Address:</td><td><textarea class="form-control" name="address" placeholder="Address"></textarea required autocomplete="off"></td></tr> 
+		 
+		<tr><td>Enter your phone number:</td><td><input class="form-control" type="tel" id="phone" name="phone" maxlength="10" placeholder="Phone Number" required autocomplete="off"></td></tr>
+        
+		  
+        <tr><td>Enter your email address:</td><td><input class="form-control" type="email" name="email" placeholder="Email ID" required autocomplete="off"></td></tr>
+		
+		<tr><td>Select your dog: </td>
+		<td><select class="form-control" name="selectdog" onChange="OnDropDownChange(this);">
+		<option selected_disabled="true"> Select from..</option>
+		<option> Lucy </option>
+		<option> Mia  </option>
+		<option> Lola </option>
+		<option> Harley  </option>
+		<option> Snow </option>
+		<option> New Litter puppies </option>
+		<option>  Buddy </option>
+		<option> Sunny </option>
+		<option>  Bear </option>
+		</select></td></tr>
+		
+		 
+           
+		<tr><td></td></tr><tr><td></td></tr>
+		<tr><td><input type="submit" class="btn btn-primary" value="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-outline-primary" value="reset"></td></tr>
+  
+
+</table>
+
+{% if messages %}
+{% for message in messages %}
+	{{message}}
+{% endfor %}
+{% endif %}
+ 
+</div>
+</form>
+
+ 
+
+</center><br><br>
+
+
+</body>
+{% endblock %}

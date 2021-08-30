@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Us</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+
+<style>
+
+input, select, textarea {
+font-size: 80%;
+}
+body{
+			font-family: Montserrat;
+          }
+
+	.box{
+          box-shadow: 0px 0px 80px 0px rgba(135,100,184,0.2);
+          padding: 40px;
+          max-width: 1000px;
+          margin-top: 50px;
+          border-radius: 10px;
+          background-size: cover;
+      }
+</style>
+
+</head>
+<body bgcolor="white">
+<center>
+<br><br>
+<font face="tahoma" size="5"><h1 style="color:gray"><b> How to reach us? </b></h1></font></center><br>
+<font size="3"><center><h2> Feel free to send us a mail!  </h2></center></font><br><br>
+
+<p><font style="font-size:150%"> Our organization is dedicated to provide a brighter future for animals in need 
+of hope and a chance at life. We do not have a physical location. Our dogs are housed in foster homes or Boarding Facilities when necessary. 
+You can email us at <b>doginfo@Dogs&Life.org</b> if you have any questions, and please allow 3-4 days for us to respond.<br><br>
+ 
+ We are not a business or company but an organization made up of volunteers who are dedicating their time, homes, cars, money, and hearts to 
+ saving dogs left behind. We are here solely to help you see the value in a dog we have rescued. Our goal is to help find more dogs homes. 
+ We ask that you take your time in selecting the best dog for your lifestyle.<br><br><br>
+
+<center><img src="{% static '/images/AboutUs.jpg' %}" alt="" style="width:850px;height:300px;"></center>
+
+<br><br>Please understand we are not providing you a professionally trained dog. That is what we look for you to provide once you have bonded with your new dog. 
+Please exercise caution and be safe when interacting with your new dog as these are animals and they can be unpredictable and can react differently 
+in a new environment.<br><br> Please be patient with your new dog when you bring him home and understand he is going to make some mistakes. 
+Adopting is a long commitment and should be met with a plan. <br><br>
+
+We do our best to inform you about the dogs and we provide information through the interview process, in the adoption paperwork, 
+email communications, and post-adoption paperwork.<br><br> It is important that you take the time to review this information 
+and follow these instructions. This information will help make the transition easier for you and your dog. 
+Thank you for partnering with us to save a life by adopting a rescued dog/puppy.<br><br><br>
+
+<font size="5"><b> Fill in any of your queries and we'll reach out ! </b></font><br><br>
+    <form name="myForm" method="POST">  
+        
+        <div class="box"> 
+            {% csrf_token %}
+        <table cellspacing="15" cellpadding="10">
+
+        <tr><td>Enter your first name:</td><td><input class="form-control" type="text" placeholder="First name" name="fname" required autocomplete="off"></td></tr>
+		
+		<tr><td>Enter your last name:</td><td><input class="form-control" type="text" placeholder="Last name" name="lname" required autocomplete="off"></td></tr>
+ 
+         <tr><td>Enter your email ID:</td><td><input class="form-control" type="email" placeholder="Email ID" name="email" required autocomplete="off"></td></tr>
+		 
+		 <tr><td>Comment or Message/Query:</td><td><textarea class="form-control" cols="50" rows="7" type="text" placeholder="Query" name="textbox" required autocomplete="off"></textarea></td></tr>
+
+		 
+         <tr><td></td></tr>
+         <tr><td><input type="submit" class="btn btn-primary" value="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-outline-primary" value="reset"></td></tr>
+         
+     </table>
+{% if messages %}
+{% for message in messages %}
+	{{message}}
+{% endfor %}
+{% endif %}
+    </div>
+  </form>  
+  
+  <br>
+<center><marquee><b><font face="tahoma" size="4">Have patience and continue showering your baby with all the love you can.</font><b></marquee></center>
+</font></p>
+
+<br>
+<a href="{% url 'mainp' %}" title="Go to Home Page">
+<img src="{% static '/images/Home.jpg' %}" align="right" style="width:50px;height:50px;"></a> 
+
+
+
+
+
+</body>
+</html>

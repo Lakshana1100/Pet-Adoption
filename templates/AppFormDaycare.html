@@ -1,0 +1,67 @@
+{% extends 'baseForms.html' %}
+{% load static %}
+
+{% block title %} DayCareForm {% endblock %}
+
+
+{% block content %}
+
+
+ <Body> 
+ 
+<br><br>
+
+<center><font face="tahoma" size="15" color="grey"><b> Daycare Form </b></font></center>
+<br><br>
+	
+	<center>
+	<font size="5"> Enter the following contact details : </font><br>
+  <font size="5"> (First step to volunteer for daycare)</font>
+	
+	<div class="box">
+	
+	
+	
+	<form name="myForm" method="POST">  
+		{% csrf_token %}
+	<table cellspacing="15" cellpadding="10">
+	
+  
+		
+        <tr><td>Enter your full name:</td><td><input class="form-control" type="text" name="name" placeholder="Full name" required autocomplete="off"></td></tr>
+  
+        <tr><td>Enter your age:</td><td><input class="form-control" type="number" name="age" placeholder="Age" min="18" max="100" required autocomplete="off"></td></tr>
+ 
+        <tr><td>Enter your Address:</td><td><textarea class="form-control" name="address" placeholder="Address"></textarea required autocomplete="off"></td></tr> 
+		 
+		<tr><td>Enter your phone number:</td><td><input class="form-control" type="tel" id="phone" name="phone" maxlength="10" placeholder="Phone Number" required autocomplete="off"></td></tr>
+        
+		  
+        <tr><td>Enter your email address:</td><td><input class="form-control" type="email" name="email" placeholder="Email ID" required autocomplete="off"></td></tr>
+		 
+		<tr><td>Enter your daycare start date:</td><td><input class="form-control" type="date" name="datedd" placeholder="Date"   min="2021-08-30" max="2021-10-31" required autocomplete="off"></td></tr>
+		<tr><td>Enter your daycare end date:</td><td><input class="form-control" type="date" name="datedd2" placeholder="Date"   min="2021-08-30" max="2021-10-31" required autocomplete="off"></td></tr>  
+		
+		<tr><td></td></tr><tr><td></td></tr>
+		<tr><td><input type="submit" class="btn btn-primary" value="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-outline-primary" value="reset"></td></tr>
+  
+
+</table>
+
+{% if messages %}
+{% for message in messages %}
+	{{message}}
+{% endfor %}
+{% endif %}
+
+</div>
+  </form>
+
+
+ 
+
+</center><br><br>
+
+
+</body>
+{% endblock %}
